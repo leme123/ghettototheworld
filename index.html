@@ -6,16 +6,30 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: white;
+      background-color: #ffffff;
       margin: 0;
       padding: 0;
     }
 
     header {
-      background-color: black;
+      background: url('background.jpg') no-repeat center center;
+      background-size: cover;
       color: gold;
       text-align: center;
-      padding: 30px 10px;
+      padding: 60px 10px;
+    }
+
+    header h1 {
+      font-size: 48px;
+      text-shadow: 2px 2px black;
+    }
+
+    header p {
+      font-size: 18px;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
     }
 
     section {
@@ -23,16 +37,25 @@
     }
 
     .playlist {
-      background-color: #f9f9f9;
+      background-color: #f4f4f4;
       padding: 20px;
       border-radius: 10px;
       margin-bottom: 30px;
     }
 
     .song {
-      margin-bottom: 25px;
+      background-color: #fff;
       padding: 15px;
-      border-bottom: 1px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .song img {
+      max-width: 50%;
+      height: 20%;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
 
     audio {
@@ -44,17 +67,24 @@
       margin-top: 10px;
     }
 
-    .buttons a {
+    .buttons a, .buttons button {
       display: inline-block;
       background-color: gold;
       color: black;
       padding: 8px 15px;
-      margin-right: 10px;
+      margin: 5px 5px 0 0;
       border-radius: 5px;
       text-decoration: none;
+      border: none;
+      cursor: pointer;
     }
 
-    .contact, .comments {
+    .likes, .downloads {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .comments, .contact {
       background-color: #222;
       color: white;
       padding: 30px 10%;
@@ -74,12 +104,11 @@
     }
 
     button {
-      margin-top: 10px;
       background-color: gold;
       color: black;
       padding: 10px 20px;
-      border: none;
       border-radius: 5px;
+      border: none;
       cursor: pointer;
     }
 
@@ -90,39 +119,95 @@
       padding: 10px;
     }
   </style>
+
+  <script>
+    let downloadCount = 0;
+    let likeCount = 0;
+
+    function increaseDownload() {
+      downloadCount++;
+      document.getElementById("download-count").innerText = "Downloads: " + downloadCount;
+    }
+
+    function increaseLike() {
+      likeCount++;
+      document.getElementById("like-count").innerText = "Likes: " + likeCount;
+    }
+  </script>
 </head>
 <body>
 
   <header>
     <h1>Rising Up the Ghetto</h1>
-    <p>Welcome to this website, home of African cool music, dancehall, hip hop, local and afro. Here is were you listen and download letest music<br> lemme bwai ghetto boss</p>
+    <p>Welcome to this website, home of African cool music, dancehall, hip hop, local and afro.<b> Lemme Bwai Ghetto Boss</p>
   </header>
+
+<div class="search-bar" style="padding: 20px 10%; background-color: #f1f1f1;">
+  <input type="text" id="searchInput" placeholder="Search for a song or artist..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+</div>
 
   <section class="playlist">
     <h2>Latest Track</h2>
 
     <div class="song">
-      <strong><br>Artist: Lemme bwai<br>Song title: Yearoso Ndi Hero<br> Genre: Hip hop</strong> 
+      <img src="yaro.jpg" alt="Yearoso Ndi Hero Artwork">
+      <strong><br>Artist: Lemme Bwai<br>Song title: Yearoso Ndi Hero<br>Genre: Hip hop</strong>
       <audio controls>
         <source src="yearoso ndi hero.mp3" type="audio/mp3">
         Your browser does not support the audio element.
       </audio>
       <div class="buttons">
-        <a href="yearoso ndi hero.mp3" download>Download</a>
-        <a href="#">Share</a> <a href="#">like</a>
+        <a href="yearoso ndi hero.mp3" download onclick="increaseDownload()">Download</a>
+        <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share on WhatsApp</a>
+        <button onclick="increaseLike()">Like</button>
       </div>
+      <div class="downloads" id="download-count">Downloads: 0</div>
+      <div class="likes" id="like-count">Likes: 0</div>
     </div>
+
+ <div class="song">
+      <img src="ciga.jpg" alt="cigaratte art">
+      <strong><br>Artist: Onesimus<br>Song title: Cegarrete<br>Genre: Afro</strong>
+      <audio controls>
+        <source src="onesmus.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="buttons">
+        <a href="onesmus.mp3" download onclick="increaseDownload()">Download</a>
+        <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
+        <button onclick="increaseLike()">Like</button>
+      </div>
+      <div class="downloads" id="download-count">Downloads: 0</div>
+      <div class="likes" id="like-count">Likes: 0</div>
+    </div>
+
+<div class="song">
+      <img src="for.jpg" alt="cigaratte art">
+      <strong><br>Artist: Mafo<br>Song title: Chorus<br>Genre: Hip hop</strong>
+      <audio controls>
+        <source src="mafo.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="buttons">
+        <a href="onesmus.mp3" download onclick="increaseDownload()">Download</a>
+        <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
+        <button onclick="increaseLike()">Like</button>
+      </div>
+      <div class="downloads" id="download-count">Downloads: 0</div>
+      <div class="likes" id="like-count">Likes: 0</div>
+    </div>
+
 
     <div class="song">
       <strong>More songs coming soon...</strong>
-      <p>Stay tuned for more uploads! <br> nyimbo mwakathithi</p>
+      <p>Stay tuned for more uploads!<br> Nyimbo mwakathithi.</p>
     </div>
   </section>
 
   <section class="comments">
     <h3>Leave a Comment</h3>
     <textarea placeholder="Write your comment here..."></textarea>
-    <button onclick="alert('Thanks for your comment!')">Post Comment</button>
+    <button onclick="alert('Thanks for your comment! ghetto to the world')">Post Comment</button>
   </section>
 
   <section class="contact">
@@ -132,8 +217,23 @@
   </section>
 
   <footer>
-    &copy; 2025 Rising Up the Ghetto. All rights reserved. Leme bwai ghetto boss
+    &copy; 2025 Rising Up the Ghetto. All rights reserved. Powered by Lemme Bwai Ghetto Boss
   </footer>
+<script>
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', function() {
+    const filter = searchInput.value.toLowerCase();
+    const songs = document.querySelectorAll('.song');
 
+    songs.forEach(song => {
+      const text = song.innerText.toLowerCase();
+      if (text.includes(filter)) {
+        song.style.display = '';
+      } else {
+        song.style.display = 'none';
+      }
+    });
+  });
+</script>
 </body>
 </html>
