@@ -160,6 +160,7 @@
         <a href="yearoso ndi hero.mp3" download onclick="increaseDownload()">Download</a>
         <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share on WhatsApp</a>
         <button onclick="increaseLike()">Like</button>
+<a href="#" onclick="copyLink('yearoso ndi hero-id')">Copy Link</a>
       </div>
       <div class="downloads" id="download-count">Downloads: 0</div>
       <div class="likes" id="like-count">Likes: 0</div>
@@ -176,9 +177,10 @@
         <a href="onesmus.mp3" download onclick="increaseDownload()">Download</a>
         <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
         <button onclick="increaseLike()">Like</button>
-      </div>
+<a href="#" onclick="copyLink('onesmus-id')">Copy Link</a>
+      </div> 
       <div class="downloads" id="download-count">Downloads: 0</div>
-      <div class="likes" id="like-count">Likes: 0</div>
+      <div class="likes" id="like-count">Likes: 0</div> 
     </div>
 
 <div class="song">
@@ -189,9 +191,11 @@
         Your browser does not support the audio element.
       </audio>
       <div class="buttons">
-        <a href="onesmus.mp3" download onclick="increaseDownload()">Download</a>
+        <a href="mafo.mp3" download onclick="increaseDownload()">Download</a>
         <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
         <button onclick="increaseLike()">Like</button>
+<a href="#" onclick="copyLink('mafo-id')">Copy Link</a>
+
       </div>
       <div class="downloads" id="download-count">Downloads: 0</div>
       <div class="likes" id="like-count">Likes: 0</div>
@@ -234,6 +238,16 @@
       }
     });
   });
+</script>
+<script>
+  function copyLink(songId) {
+    const url = window.location.href.split('#')[0] + '#' + songId;
+    navigator.clipboard.writeText(url).then(() => {
+      alert('Link copied to clipboard!');
+    }).catch(() => {
+      alert('Failed to copy the link.');
+    });
+  }
 </script>
 </body>
 </html>
