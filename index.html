@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Rising Up the Ghetto</title>
   <style>
     body {
@@ -9,65 +9,10 @@
       background-color: #ffffff;
       margin: 0;
       padding: 0;
-      display: flex;
-    }
-
-    .sidebar {
-      width: 220px;
-      background-color: #111;
-      color: white;
-      padding: 20px;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 1000;
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-    }
-
-    .sidebar.active {
-      transform: translateX(0);
-    }
-
-    .sidebar h2 {
-      color: gold;
-    }
-
-    .sidebar a {
-      color: white;
-      text-decoration: none;
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .sidebar a:hover {
-      background-color: gold;
-      color: black;
-    }
-
-    .main-content {
-      margin-left: 0;
-      width: 100%;
-    }
-
-    .menu-button {
-      background: none;
-      border: none;
-      color: black;
-      font-size: 24px;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 1100;
-      cursor: pointer;
     }
 
     header {
-      background: url('background.jpg') no-repeat center center;
+      background: url('background.jpg') no-repeat center center; 
       background-size: cover;
       color: gold;
       text-align: center;
@@ -99,15 +44,16 @@
     }
 
     .song {
+      margin-bottom: 25px;
       background-color: #fff;
       padding: 15px;
+      border-bottom: 1px solid #ccc;
       border-radius: 10px;
-      margin-bottom: 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .song img {
-      max-width: 50%;
+      max-width: 30%;
       height: 20%;
       border-radius: 8px;
       margin-bottom: 10px;
@@ -115,10 +61,6 @@
 
     audio {
       width: 100%;
-      margin-top: 10px;
-    }
-
-    .buttons {
       margin-top: 10px;
     }
 
@@ -139,218 +81,298 @@
       font-size: 14px;
     }
 
-    textarea {
-      width: 100%;
-      height: 80px;
-      margin-top: 10px;
-      border-radius: 8px;
-      padding: 10px;
-    }
-
-    .comment-box {
-      margin-top: 15px;
-    }
-
-    .comments-display {
-      margin-top: 10px;
-      font-size: 14px;
-      background-color: #f1f1f1;
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .contact, footer {
+    .comments, .contact {
       background-color: #222;
       color: white;
       padding: 30px 10%;
+      margin-top: 30px;
     }
 
     .contact a {
       color: gold;
     }
 
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-top: 10px;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
     footer {
       text-align: center;
       background-color: #111;
-    }
-
-    .search-bar {
-      padding: 20px 10%;
-      background-color: #f1f1f1;
-    }
-
-    .search-bar input {
-      width: 100%;
+      color: white;
       padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
 
-  <button class="menu-button" onclick="toggleSidebar()">&#9776;</button>
+<header>
+  <h1>Rising Up the Ghetto</h1>
+  <p>Welcome to this website, home of African cool music, dancehall, hip hop, local and afro. <br> Lemme Bwai Ghetto Boss</p>
+</header>
 
-  <div class="sidebar" id="sidebar">
-    <h2>Menu</h2>
-    <a href="#">Search</a>
-    <a href="#">Discover</a>
-    <a href="#">Browse</a>
-    <a href="#">Charts</a>
-    <a href="#">Artist</a>
-    <a href="#">Models</a>
-    <hr>
-    <a href="#">Tracks</a>
-    <a href="#">Playlists</a>
-    <a href="#">Likes</a>
-    <br>
-    <button>Log In</button>
-    <button style="margin-top: 10px;">Sign Up</button>
-  </div>
+<div class="search-bar" style="padding: 20px 10%; background-color: #f1f1f1;">
+  <input type="text" id="searchInput" placeholder="Search for a song or artist..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+</div>
 
-  <div class="main-content">
-    <header>
-      <h1>Rising Up the Ghetto</h1>
-      <p>Welcome to this website, home of African cool music, dancehall, hip hop, local and afro. <b>Lemme Bwai Ghetto Boss</b></p>
-    </header>
+<section class="playlist">
+  <h2><strong>Latest Tracks...........</strong></h2>
+  <p><strong> ghetto afile chivibe🔥🔥🔥🔥 </strong>
+  
 
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search for a song or artist...">
+  
+  <div class="song" id="song1">
+    <img src="yaro.jpg" alt="chance Artwork">
+    <strong><br>Artist: Lemme Bwai<br>Song title: Yearoso ndi Hero<br>Genre: Hip hop</strong>
+    <audio controls>
+      <source src="yearoso ndi hero.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="buttons">
+      <a href="yeroso ndi hero.mp3" download onclick="increaseDownload('4++')">Download</a>
+      <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
+      <button onclick="increaseLike('4'++)">Like</button>
     </div>
-
-    <section class="playlist">
-      <h2>Latest Track</h2>
-
-      <!-- SONG 1 -->
-      <div class="song" id="song1">
-        <img src="yaro.jpg" alt="Yearoso Ndi Hero Artwork">
-        <strong><br>Artist: Lemme Bwai<br>Song title: Yearoso Ndi Hero<br>Genre: Hip hop</strong>
-        <audio controls>
-          <source src="yearoso ndi hero.mp3" type="audio/mp3">
-        </audio>
-        <div class="buttons">
-          <a href="yearoso ndi hero.mp3" download>Download</a>
-          <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share on WhatsApp</a>
-          <button>Like</button>
-        </div>
-        <div class="downloads">Downloads: 560</div>
-        <div class="likes">Likes: 3.2k</div>
-        <div class="comment-box">
-          <textarea placeholder="Write your comment here..."></textarea>
-          <button onclick="postComment(this)">Post Comment</button>
-          <div class="comments-display"></div>
-        </div>
-      </div>
-
-      <!-- SONG 2 -->
-      <div class="song" id="song2">
-        <img src="ciga.jpg" alt="cigaratte art">
-        <strong><br>Artist: Onesimus<br>Song title: Cegarrete<br>Genre: Afro</strong>
-        <audio controls>
-          <source src="onesmus.mp3" type="audio/mp3">
-        </audio>
-        <div class="buttons">
-          <a href="onesmus.mp3" download>Download</a>
-          <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
-          <button>Like</button>
-        </div>
-        <div class="downloads">Downloads: 15k</div>
-        <div class="likes">Likes: 20.4k</div>
-        <div class="comment-box">
-          <textarea placeholder="Write your comment here..."></textarea>
-          <button onclick="postComment(this)">Post Comment</button>
-          <div class="comments-display"></div>
-        </div>
-      </div>
-
-      <!-- SONG 3 -->
-      <div class="song" id="song3">
-        <img src="for.jpg" alt="cigaratte art">
-        <strong><br>Artist: Mafo<br>Song title: Chorus<br>Genre: Hip hop</strong>
-        <audio controls>
-          <source src="mafo.mp3" type="audio/mp3">
-        </audio>
-        <div class="buttons">
-          <a href="mafo.mp3" download>Download</a>
-          <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
-          <button>Like</button>
-        </div>
-        <div class="downloads">Downloads: 2.3k</div>
-        <div class="likes">Likes: 6k</div>
-        <div class="comment-box">
-          <textarea placeholder="Write your comment here..."></textarea>
-          <button onclick="postComment(this)">Post Comment</button>
-          <div class="comments-display"></div>
-        </div>
-      </div>
-
-  <!-- SONG 4 -->
-      <div class="song" id="song4">
-        <img src="school.jpg" alt="school drop out art">
-        <strong><br>Artist: widy p featuring chispa<br>Song title: school drop out<br>Genre: trap</strong>
-        <audio controls>
-          <source src="School drop out.mp3" type="audio/mp3">
-        </audio>
-        <div class="buttons">
-          <a href="School drop out.mp3" download>Download</a>
-          <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
-          <button>Like</button>
-        </div>
-        <div class="downloads">Downloads: 200</div>
-        <div class="likes">Likes: 96</div>
-        <div class="comment-box">
-          <textarea placeholder="Write your comment here..."></textarea>
-          <button onclick="postComment(this)">Post Comment</button>
-          <div class="comments-display"></div>
-        </div>
-      </div>
-
-
-      <div class="song">
-        <strong>More songs coming soon...</strong>
-        <p>Stay tuned for more uploads!<br> Nyimbo mwakathithi.</p>
-      </div>
-    </section>
-
-    <section class="contact">
-      <h3>Contact for Music Upload & Promotion</h3>
-      <p><strong>Phone:</strong> 0990842635</p>
-      <p><strong>Email:</strong> <a href="mailto:bandamalack968@gmail.com">bandamalack968@gmail.com</a></p>
-    </section>
-
-    <footer>
-      &copy; 2025 Rising Up the Ghetto. All rights reserved. Powered by Lemme Bwai Ghetto Boss
-    </footer>
+    <div class="downloads" id="download-count-1">Downloads: 2.3k</div>
+    <div class="likes" id="like-count-1">Likes: 1.5k</div>
+  </div>
+  
+  <div class="song" id="song2">
+    <img src="ciga.jpg" alt="cigaratte art">
+    <strong><br>Artist: Onesimus<br>Song title: Cegarrete<br>Genre: Afro</strong>
+    <audio controls>
+      <source src="onesmus.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="buttons">
+      <a href="onesmus.mp3" download onclick="increaseDownload('2')">Download</a>
+      <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
+      <button onclick="increaseLike('2')">Like</button>
+    </div>
+    <div class="downloads" id="download-count-2">Downloads: 15k</div>
+    <div class="likes" id="like-count-2">Likes: 24.1k</div>
   </div>
 
-  <script>
-    function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('active');
-    }
+  <div class="song" id="song3">
+    <img src="for.jpg" alt="cigaratte art">
+    <strong><br>Artist: Mafo<br>Song title: Chorus<br>Genre: Hip hop</strong>
+    <audio controls>
+      <source src="mafo.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="buttons">
+      <a href="mafo.mp3" download onclick="increaseDownload('3')">Download</a>
+      <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
+      <button onclick="increaseLike('3')">Like</button>
+    </div>
+    <div class="downloads" id="download-count-3">Downloads: 6900</div>
+    <div class="likes" id="like-count-3">Likes: 2760</div>
+  </div>
 
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', function () {
-      const filter = searchInput.value.toLowerCase();
-      const songs = document.querySelectorAll('.song');
-      songs.forEach(song => {
-        const text = song.innerText.toLowerCase();
-        song.style.display = text.includes(filter) ? '' : 'none';
-      });
+  <div class="song" id="song4">
+    <img src="school.jpg" alt="School Drop Out Artwork">
+    <strong><br>Artist: widy p X chispa<br>Song title: School Drop Out<br>Genre: Afro/Hip Hop</strong>
+    <audio controls>
+      <source src="school drop out.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="buttons">
+      <a href="school drop out.mp3" download onclick="increaseDownload('4')">Download</a>
+      <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
+      <button onclick="increaseLike('4')">Like</button>
+    </div>
+    <div class="downloads" id="download-count-4">Downloads: 200</div>
+    <div class="likes" id="like-count-4">Likes: 340</div>
+  </div>
+  
+  <div class="song" id="song5">
+    <img src="Namadingo.jpg" alt="kwenekuno Artwork">
+    <strong><br>Artist: Namadingo<br>Song title: Kwenekuno<br>Genre: Afro </strong>
+    <audio controls>
+      <source src="Namadingo_-_kwenekuno.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="buttons">
+      <a href="Namadingo_-_kwenekuno.mp3" download onclick="increaseDownload('4++')">Download</a>
+      <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
+      <button onclick="increaseLike('4'++)">Like</button>
+    </div>
+    <div class="downloads" id="download-count-5">Downloads: 1.7k</div>
+    <div class="likes" id="like-count-5">Likes: 2.3k</div>
+  </div>
+  
+  
+  
+  
+  
+
+<div class="song">
+    <strong> more music from kclakaz music </strong>
+    </div>
+	
+	
+	
+	
+	
+	<div class="song" id="song6">
+    <img src="FAR AWAY.jpg" alt="far away art">
+    <strong><br>Artist: Cevo265<br>Song title: Far_away<br>Genre: Afro </strong>
+    <audio controls>
+      <source src="Far away.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="buttons">
+      <a href="Far away.mp3" download onclick="increaseDownload('4++')">Download</a>
+      <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
+      <button onclick="increaseLike('4'++)">Like</button>
+    </div>
+    <div class="downloads" id="download-count-6">Downloads: 10</div>
+    <div class="likes" id="like-count-6">Likes: 22</div>
+  </div>
+  <div class="song" id="song7">
+    <img src="chance.jpg" alt="chance Artwork">
+    <strong><br>Artist: cevo 265 X Doss Kaddah<br>Song title: Chance<br>Genre: dancehall </strong>
+    <audio controls>
+      <source src="Cevo265 X Doss Kaddah-chance.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="buttons">
+      <a href="Cevo265 X Doss Kaddah-chance.mp3" download onclick="increaseDownload('4++')">Download</a>
+      <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
+      <button onclick="increaseLike('4'++)">Like</button>
+    </div>
+    <div class="downloads" id="download-count-7">Downloads: 53</div>
+    <div class="likes" id="like-count-7">Likes: 27</div>
+  </div>
+   <div class="song" id="song8">
+    <img src="again art.jpg" alt="chance Artwork">
+    <strong><br>Artist: cevo265 X Black G<br>Song title: Again<br>Genre: dancehall </strong>
+    <audio controls>
+      <source src="again.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="buttons">
+      <a href="again.mp3" download onclick="increaseDownload('4++')">Download</a>
+      <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
+      <button onclick="increaseLike('4'++)">Like</button>
+    </div>
+    <div class="downloads" id="download-count-8">Downloads: 53</div>
+    <div class="likes" id="like-count-8">Likes: 27</div>
+  </div>
+  
+   <div class="song" id="song9">
+    <img src="again art.jpg" alt="chance Artwork">
+    <strong><br>Artist: cevo265<br>Song title: Maria<br>Genre: dancehall </strong>
+    <audio controls>
+      <source src="Maria.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="buttons">
+      <a href="Maria.mp3" download onclick="increaseDownload('4++')">Download</a>
+      <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
+      <button onclick="increaseLike('4'++)">Like</button>
+    </div>
+    <div class="downloads" id="download-count-9">Downloads: 53</div>
+    <div class="likes" id="like-count-9">Likes: 27</div>
+  </div>
+  
+   <div class="song" id="song10">
+    <img src="judas art.jpg" alt="chance Artwork">
+    <strong><br>Artist: Doss Kaddah X cevo265<br>Song title: Judas<br>Genre: dancehall </strong>
+    <audio controls>
+      <source src="Judas.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="buttons">
+      <a href="Judas.mp3" download onclick="increaseDownload('4++')">Download</a>
+      <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
+      <button onclick="increaseLike('4'++)">Like</button>
+    </div>
+    <div class="downloads" id="download-count-10">Downloads: 222</div>
+    <div class="likes" id="like-count-10">Likes: 74</div>
+  </div>
+  
+  <div class="song" id="song11">
+    <img src="ndichani art.jpg" alt="chance Artwork">
+    <strong><br>Artist: Doss Kaddah X cevo265<br>Song title: Judas<br>Genre: dancehall </strong>
+    <audio controls>
+      <source src="ndichani.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="buttons">
+      <a href="ndichani.mp3" download onclick="increaseDownload('4++')">Download</a>
+      <a href="https://wa.me/?text=Check out this hot track on Rising Up the Ghetto! https://leme123.github.io/ghettoriseup" target="_blank">Share the link</a>
+      <button onclick="increaseLike('4'++)">Like</button>
+    </div>
+    <div class="downloads" id="download-count-11">Downloads: 211</div>
+    <div class="likes" id="like-count-10">Likes: 87</div>
+  </div>
+ 
+  
+<section>
+  <div class="song">
+    <strong>More songs coming soon...</strong>
+    <p>Stay tuned for more uploads!<br> Nyimbo mwakathithi!! moto kuti 🔥🔥🔥</p>
+	<p> for more information you can contact lemme Bwai THE GHETTO BOSS</p>
+	<p> we promote all upcoming Artists at free cost just upload your song here we are going to promote it. Ghettoto the globe</P>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="comments">
+  <h3>Leave a Comment</h3>
+  <textarea placeholder="Write your comment here..."></textarea>
+  <button onclick="alert('Thanks for your comment! Ghetto to the world')">Post Comment</button>
+</section>
+
+<section class="contact">
+  <h3>Contact for Music Upload & Promotion</h3>
+  <p>This website was created with the aim of promoting all upcoming artists. Most upcoming Artists found it difficult to make themselves populary, this websiteis yours.<br> We would like to see a lot of upcoming Artists being interacting with this website. Am not here just to make money but to promote ghetto yut.<br> Lets pop up till we reach our destiny<br> AH DI BESS AH DI JERK.</P>
+  <p>WhatsApp: <a href="https://wa.me/265882313994" target="_blank">0990842635</a></p>
+  <p>Email: <a href="mailto:lemmebwailive@gmail.com">bandamalack986gmail.com</a></p>
+</section>
+
+
+
+<footer>
+  &copy; 2025 Rising Up the Ghetto. All rights reserved. Powered by Lemme Bwai Ghetto Boss
+</footer>
+
+<script>
+  const likes = { 1: 0, 2: 0, 3: 0, 4: 10 };
+  const downloads = { 1: 0, 2: 0, 3: 0, 4: 10 };
+
+  function increaseLike(id) {
+    likes[id]++;
+    document.getElementById(like-count-${id}).innerText = Likes: ${likes[id]};
+  }
+
+  function increaseDownload(id) {
+    downloads[id]++;
+    document.getElementById(download-count-${id}).innerText = Downloads: ${downloads[id]};
+  }
+
+  const searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', function () {
+    const filter = searchInput.value.toLowerCase();
+    const songs = document.querySelectorAll('.song');
+    songs.forEach(song => {
+      const text = song.innerText.toLowerCase();
+      song.style.display = text.includes(filter) ? '' : 'none';
     });
+  });
+</script>
 
-    function postComment(button) {
-      const container = button.closest('.comment-box');
-      const textarea = container.querySelector('textarea');
-      const commentDisplay = container.querySelector('.comments-display');
-      const comment = textarea.value.trim();
-      if (comment) {
-        const p = document.createElement('p');
-        p.textContent = comment;
-        commentDisplay.appendChild(p);
-        textarea.value = '';
-        alert('Thanks for your comment! Ghetto to the world!');
-      }
-    }
-  </script>
 </body>
 </html>
